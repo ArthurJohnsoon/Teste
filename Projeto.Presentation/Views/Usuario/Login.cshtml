@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Realizar Autenticação</h4>
+Preencha os campos abaixo para acessar o sistema.
+<br />
+<br />
+
+@model Projeto.Presentation.Models.UsuarioLoginViewModel
+
+@using (Html.BeginForm())
+{
+    <label>Login de Acesso:</label>
+    @Html.TextBoxFor(model => model.Login,
+            new { @class = "form-control col-md-4", @placeholder = "Digite aqui" })
+    <div class="text-danger">
+        @Html.ValidationMessageFor(model => model.Login)
+    </div>
+    <br/>
+
+    <label>Senha de Acesso:</label>
+    @Html.PasswordFor(model => model.Senha,
+            new { @class = "form-control col-md-4", @placeholder = "Digite aqui" })
+    <div class="text-danger">
+        @Html.ValidationMessageFor(model => model.Senha)
+    </div>
+    <br/>
+
+    <input type="submit" value="Acessar Sistema"
+           class="btn btn-success"/>
+    <br/>
+    <br/>
+    @ViewBag.Mensagem
+}

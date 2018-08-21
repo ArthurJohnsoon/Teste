@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Menu de Acesso</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</head>
+<body class="container">
+    <div> 
+        <h2>Sistema de controle de Usuários</h2>
+        <ul>
+            <li><a href="/Usuario/Cadastro">Criar conta de acesso</a></li>
+            <li><a href="/Usuario/Login">Realizar autenticação</a></li>
+        </ul>
+    </div>
+
+    <hr/>
+    @RenderBody()
+</body>
+</html>
